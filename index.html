@@ -6,28 +6,28 @@
   <title>Mapping the Survival of the Florida Panther</title>
 
   <!-- D3 v7 -->
-  https://d3js.org/d3.v7.min.js
-  <!-- Scrollama (The Pudding's scroll library) -->
-  https://unpkg.com/scrollama
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <!-- Scrollama -->
+  <script src="https://unpkg.com/scrollama"></script>
 
   <style>
     /* ══════════════════════════════════════
-       BASE RESET & TYPOGRAPHY  (Pudding-style)
+       BASE RESET & TYPOGRAPHY
     ══════════════════════════════════════ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green-dark:   #1b3a2d;
-      --green-mid:    #2d6a4f;
-      --green-light:  #74c69d;
-      --green-pale:   #d8f3dc;
-      --red:          #c0392b;
-      --text:         #1a1a1a;
-      --text-light:   #555;
-      --bg:           #faf9f6;
-      --white:        #ffffff;
-      --max-width:    1200px;
-      --col-width:    680px;
+      --green-dark:  #1b3a2d;
+      --green-mid:   #2d6a4f;
+      --green-light: #74c69d;
+      --green-pale:  #d8f3dc;
+      --red:         #c0392b;
+      --text:        #1a1a1a;
+      --text-light:  #555;
+      --bg:          #faf9f6;
+      --white:       #ffffff;
+      --max-width:   1200px;
+      --col-width:   680px;
     }
 
     html { scroll-behavior: smooth; }
@@ -126,7 +126,7 @@
     }
 
     /* ══════════════════════════════════════
-       PROSE SECTIONS  (narrow centered col)
+       PROSE
     ══════════════════════════════════════ */
     .prose {
       max-width: var(--col-width);
@@ -203,8 +203,7 @@
     }
 
     /* ══════════════════════════════════════
-       ★  SCROLLYTELLING SECTION  ★
-       Pudding sticky-graphic pattern
+       SCROLLYTELLING
     ══════════════════════════════════════ */
     #scroll {
       position: relative;
@@ -212,7 +211,6 @@
       gap: 0;
     }
 
-    /* LEFT: sticky chart column */
     .scroll__graphic {
       flex: 0 0 55%;
       position: sticky;
@@ -260,7 +258,6 @@
       margin-bottom: 14px;
     }
 
-    /* RIGHT: scrolling text steps */
     .scroll__text {
       flex: 0 0 45%;
       padding: 0 0 0 40px;
@@ -313,7 +310,7 @@
     }
 
     /* ══════════════════════════════════════
-       SVG / AXES / CHART STYLES
+       SVG / AXES
     ══════════════════════════════════════ */
     .axis path, .axis line { stroke: #ccc; }
     .axis text { fill: var(--text-light); font-size: 11px; font-family: Arial, sans-serif; }
@@ -322,9 +319,7 @@
 
     .panther-line { fill: none; stroke: var(--green-mid); stroke-width: 3; }
     .area-fill    { fill: var(--green-pale); opacity: 0.6; }
-    .dot          { fill: var(--green-mid); stroke: #fff; stroke-width: 2; }
-
-    .bar-rect     { fill: var(--red); rx: 3; }
+    .dot          { fill: var(--green-mid); stroke: #fff; stroke-width: 2; cursor: pointer; }
 
     /* ══════════════════════════════════════
        TOOLTIP
@@ -344,7 +339,7 @@
     }
 
     /* ══════════════════════════════════════
-       CLOSING PROSE
+       CLOSING PROSE & FOOTER
     ══════════════════════════════════════ */
     .closing {
       max-width: var(--col-width);
@@ -352,9 +347,6 @@
       padding: 80px 0 100px;
     }
 
-    /* ══════════════════════════════════════
-       FOOTER
-    ══════════════════════════════════════ */
     footer {
       background: var(--green-dark);
       color: var(--green-light);
@@ -368,14 +360,10 @@
     footer a { color: var(--green-light); }
 
     /* ══════════════════════════════════════
-       ★  RESPONSIVE BREAKPOINTS  ★
+       RESPONSIVE BREAKPOINTS
     ══════════════════════════════════════ */
-
-    /* Tablet — stack scrolly vertically */
     @media (max-width: 900px) {
-      #scroll {
-        flex-direction: column;
-      }
+      #scroll { flex-direction: column; }
 
       .scroll__graphic {
         position: relative;
@@ -386,40 +374,23 @@
         top: auto;
       }
 
-      .chart-box {
-        max-width: 100%;
-      }
+      .chart-box { max-width: 100%; }
 
       .scroll__text {
         flex: none;
         padding: 0;
       }
 
-      .step {
-        min-height: auto;
-        padding: 20px 0;
-      }
-
+      .step { min-height: auto; padding: 20px 0; }
       .step:first-child { margin-top: 0; }
       .step:last-child  { margin-bottom: 40px; }
     }
 
-    /* Phone */
     @media (max-width: 600px) {
       body { font-size: 16px; }
-
-      .prose, .closing {
-        padding: 40px 0;
-      }
-
-      .step__inner {
-        padding: 18px 18px;
-      }
-
-      .chart-box {
-        padding: 14px 8px 8px;
-      }
-
+      .prose, .closing { padding: 40px 0; }
+      .step__inner { padding: 18px; }
+      .chart-box { padding: 14px 8px 8px; }
       footer { font-size: 0.72rem; }
     }
   </style>
@@ -430,12 +401,17 @@
      HERO
 ══════════════════════════════════════ -->
 <header class="hero">
-  NationalGeographic_panther1.jpg
+  <img
+    class="hero__img"
+    src="NationalGeographic_panther1.jpg"
+    alt="Florida panther wading through a South Florida wetland surrounded by palms and cypress trees"
+  />
   <div class="hero__overlay"></div>
   <div class="hero__text">
     <p class="hero__kicker">Data Story · Florida Wildlife · 2026</p>
     <h1 class="hero__title">Mapping the Survival<br>of the Florida Panther</h1>
-    <p class="hero__deck">How human development shapes where one of America's most endangered mammals can still survive today.</p>
+    <p class="hero__deck">How human development shapes where one of America's
+    most endangered mammals can still survive today.</p>
   </div>
   <p class="hero__caption">Photo: National Geographic</p>
 </header>
@@ -481,24 +457,30 @@
 ══════════════════════════════════════ -->
 <div class="site-wrapper">
   <figure class="mid-image">
-    NatureConservancy_panther2.jpg
-    <figcaption>A Florida panther navigates a highway wildlife crossing in South Florida. These underpasses are critical infrastructure for reducing road mortality. Photo: The Nature Conservancy.</figcaption>
+    <img
+      src="NatureConservancy_panther2.jpg"
+      alt="Florida panther standing in green grass beneath a highway overpass wildlife crossing"
+    />
+    <figcaption>
+      A Florida panther navigates a highway wildlife crossing in South Florida.
+      These underpasses are critical infrastructure for reducing road mortality.
+      Photo: The Nature Conservancy.
+    </figcaption>
   </figure>
 </div>
 
 <!-- ══════════════════════════════════════
-     ★  SCROLLYTELLING  ★
-     Sticky chart + scrolling text steps
+     SCROLLYTELLING
 ══════════════════════════════════════ -->
 <div class="site-wrapper">
   <section id="scroll">
 
     <!-- LEFT: Sticky Chart -->
     <div class="scroll__graphic">
-      <div class="chart-box" id="chartBox">
-        <p class="chart-label" id="chartLabel">Chart 1</p>
+      <div class="chart-box">
+        <p class="chart-label"    id="chartLabel">Chart 1 — Population</p>
         <p class="chart-title-text" id="chartTitleText">Florida Panther Population, 1970–2023</p>
-        <p class="chart-sub" id="chartSub">Source: FWC &amp; U.S. Fish &amp; Wildlife Service</p>
+        <p class="chart-sub"      id="chartSub">Source: FWC &amp; U.S. Fish &amp; Wildlife Service</p>
         <div id="vizContainer"></div>
       </div>
     </div>
@@ -510,7 +492,10 @@
         <div class="step__inner">
           <p class="step__num">Step 01 — Recovery</p>
           <h3>From the brink of extinction</h3>
-          <p>In the 1970s, fewer than 20 Florida panthers remained. Decades of hunting, trapping, and habitat loss had pushed the subspecies to the edge. The line chart shows just how fragile the population was — and how slow the initial recovery was.</p>
+          <p>In the 1970s, fewer than 20 Florida panthers remained. Decades
+          of hunting, trapping, and habitat loss had pushed the subspecies
+          to the edge. The chart shows just how fragile the population was —
+          and how slow the initial recovery was.</p>
         </div>
       </div>
 
@@ -518,7 +503,10 @@
         <div class="step__inner">
           <p class="step__num">Step 02 — Turning Point</p>
           <h3>A genetic rescue in 1995</h3>
-          <p>Eight Texas pumas were introduced to restore genetic diversity to an inbred Florida population. The results were swift — kitten survival rates improved and physical deformities declined sharply. Watch the population curve begin its steeper climb after 1995.</p>
+          <p>Eight Texas pumas were introduced to restore genetic diversity
+          to an inbred Florida population. Kitten survival rates improved
+          and physical deformities declined sharply. Watch the population
+          curve begin its steeper climb after 1995.</p>
         </div>
       </div>
 
@@ -526,7 +514,9 @@
         <div class="step__inner">
           <p class="step__num">Step 03 — Today</p>
           <h3>Growth — but still endangered</h3>
-          <p>Today, an estimated 120–230 panthers roam South Florida. Biologists believe the landscape could support up to 240 — but only if sufficient connected habitat remains available. The population is growing, yet fragile.</p>
+          <p>Today an estimated 120–230 panthers roam South Florida.
+          Biologists believe the landscape could support up to 240 —
+          but only if sufficient connected habitat remains available.</p>
         </div>
       </div>
 
@@ -534,7 +524,9 @@
         <div class="step__inner">
           <p class="step__num">Step 04 — Road Mortality</p>
           <h3>The road toll by county</h3>
-          <p>Switching to road mortality data: vehicle collisions are the single largest documented cause of Florida panther deaths. Collier County alone accounts for over 100 confirmed deaths since 2000 — nearly double any other county.</p>
+          <p>Vehicle collisions are the single largest documented cause of
+          Florida panther mortality. Collier County alone accounts for over
+          100 confirmed deaths since 2000 — nearly double any other county.</p>
         </div>
       </div>
 
@@ -542,11 +534,14 @@
         <div class="step__inner">
           <p class="step__num">Step 05 — Hotspots</p>
           <h3>Where the danger concentrates</h3>
-          <p>Lee, Hendry, and Miami-Dade counties follow Collier in mortality counts. These are the corridors where panther habitat intersects most intensely with Florida's road network. Wildlife underpasses on I-75 have helped — but hundreds of miles of road remain unmitigated.</p>
+          <p>Lee, Hendry, and Miami-Dade counties follow Collier in mortality
+          counts. These are the corridors where panther habitat intersects most
+          intensely with Florida's road network. Wildlife underpasses on I-75
+          have helped — but hundreds of miles of road remain unmitigated.</p>
         </div>
       </div>
 
-    </div><!-- /.scroll__text -->
+    </div>
   </section>
 </div>
 
@@ -571,7 +566,7 @@
       The panther's survival is not only a wildlife question.
       It is a question about what kind of Florida we are building.
     </p>
-    <p style="font-family:Arial,sans-serif; font-size:0.78rem; color:#999; margin-top:40px;">
+    <p style="font-family:Arial,sans-serif;font-size:0.78rem;color:#999;margin-top:40px;">
       <strong>Data sources:</strong> Florida Fish and Wildlife Conservation Commission (FWC),
       U.S. Fish &amp; Wildlife Service, confirmed road mortality reports, panther habitat
       range GIS shapefiles, U.S. Census population density data.
@@ -593,249 +588,235 @@
 <div class="tooltip" id="tooltip"></div>
 
 <!-- ══════════════════════════════════════
-     JAVASCRIPT: D3 + SCROLLAMA
+     D3 + SCROLLAMA JAVASCRIPT
 ══════════════════════════════════════ -->
 <script>
-/* ──────────────────────────────────────
-   DATA
-────────────────────────────────────── */
-const popData = [
-  { year:1970, pop:20  }, { year:1975, pop:22  }, { year:1980, pop:25  },
-  { year:1985, pop:30  }, { year:1990, pop:32  }, { year:1995, pop:40  },
-  { year:2000, pop:67  }, { year:2005, pop:87  }, { year:2010, pop:120 },
-  { year:2015, pop:160 }, { year:2020, pop:200 }, { year:2023, pop:230 }
-];
+  /* ── DATA ── */
+  const popData = [
+    { year:1970, pop:20  }, { year:1975, pop:22  }, { year:1980, pop:25  },
+    { year:1985, pop:30  }, { year:1990, pop:32  }, { year:1995, pop:40  },
+    { year:2000, pop:67  }, { year:2005, pop:87  }, { year:2010, pop:120 },
+    { year:2015, pop:160 }, { year:2020, pop:200 }, { year:2023, pop:230 }
+  ];
 
-const mortData = [
-  { county:"Collier",    deaths:104 },
-  { county:"Hendry",     deaths:58  },
-  { county:"Lee",        deaths:42  },
-  { county:"Miami-Dade", deaths:21  },
-  { county:"Broward",    deaths:14  },
-  { county:"Glades",     deaths:11  },
-  { county:"Charlotte",  deaths:8   }
-];
+  const mortData = [
+    { county:"Collier",    deaths:104 },
+    { county:"Hendry",     deaths:58  },
+    { county:"Lee",        deaths:42  },
+    { county:"Miami-Dade", deaths:21  },
+    { county:"Broward",    deaths:14  },
+    { county:"Glades",     deaths:11  },
+    { county:"Charlotte",  deaths:8   }
+  ];
 
-/* ──────────────────────────────────────
-   TOOLTIP HELPER
-────────────────────────────────────── */
-const tip = d3.select("#tooltip");
-function showTip(html, e) {
-  tip.html(html).style("opacity",1)
-     .style("left",(e.clientX+16)+"px")
-     .style("top", (e.clientY-32)+"px");
-}
-function moveTip(e) {
-  tip.style("left",(e.clientX+16)+"px")
-     .style("top", (e.clientY-32)+"px");
-}
-function hideTip() { tip.style("opacity",0); }
-
-/* ──────────────────────────────────────
-   RESPONSIVE CHART DIMENSIONS
-────────────────────────────────────── */
-function getDims() {
-  const box = document.getElementById("vizContainer");
-  const w   = box.clientWidth || 460;
-  return {
-    m: { top:28, right:24, bottom:44, left:50 },
-    w: w,
-    h: Math.min(280, Math.max(200, w * 0.55))
-  };
-}
-
-/* ──────────────────────────────────────
-   CHART 1 — LINE CHART (Population)
-────────────────────────────────────── */
-function drawLineChart() {
-  d3.select("#vizContainer").selectAll("*").remove();
-  const { m, w, h } = getDims();
-  const iw = w - m.left - m.right;
-  const ih = h - m.top  - m.bottom;
-
-  const svg = d3.select("#vizContainer").append("svg")
-    .attr("width", w).attr("height", h)
-    .append("g").attr("transform",`translate(${m.left},${m.top})`);
-
-  const x = d3.scaleLinear().domain([1970,2023]).range([0,iw]);
-  const y = d3.scaleLinear().domain([0,260]).nice().range([ih,0]);
-
-  // grid
-  svg.append("g").attr("class","grid")
-    .call(d3.axisLeft(y).tickSize(-iw).tickFormat(""));
-
-  // axes
-  svg.append("g").attr("class","axis")
-    .attr("transform",`translate(0,${ih})`)
-    .call(d3.axisBottom(x).tickFormat(d3.format("d")).ticks(6));
-  svg.append("g").attr("class","axis").call(d3.axisLeft(y).ticks(5));
-
-  // area
-  svg.append("path").datum(popData)
-    .attr("class","area-fill")
-    .attr("d", d3.area().x(d=>x(d.year)).y0(ih).y1(d=>y(d.pop)).curve(d3.curveMonotoneX));
-
-  // line
-  svg.append("path").datum(popData)
-    .attr("class","panther-line")
-    .attr("d", d3.line().x(d=>x(d.year)).y(d=>y(d.pop)).curve(d3.curveMonotoneX));
-
-  // dots
-  svg.selectAll(".dot").data(popData).enter().append("circle")
-    .attr("class","dot").attr("r",4)
-    .attr("cx",d=>x(d.year)).attr("cy",d=>y(d.pop))
-    .on("mouseover",(e,d)=>showTip(`<strong>${d.year}</strong><br>~${d.pop} panthers`,e))
-    .on("mousemove",moveTip).on("mouseout",hideTip);
-
-  // annotation: 1995 genetic rescue
-  const rescueX = x(1995);
-  const rescueY = y(40);
-  svg.append("line")
-    .attr("x1",rescueX).attr("x2",rescueX)
-    .attr("y1",rescueY-6).attr("y2",rescueY-26)
-    .attr("stroke","#e67e22").attr("stroke-width",1.5).attr("stroke-dasharray","3,2");
-  svg.append("text")
-    .attr("x",rescueX+4).attr("y",rescueY-28)
-    .style("font-size","9px").style("fill","#e67e22")
-    .style("font-family","Arial,sans-serif")
-    .text("1995: Genetic rescue");
-
-  // axis labels
-  svg.append("text").attr("x",iw/2).attr("y",ih+38)
-    .attr("text-anchor","middle").style("font-size","10px").style("fill","#888")
-    .style("font-family","Arial,sans-serif").text("Year");
-  svg.append("text").attr("transform","rotate(-90)")
-    .attr("x",-ih/2).attr("y",-38)
-    .attr("text-anchor","middle").style("font-size","10px").style("fill","#888")
-    .style("font-family","Arial,sans-serif").text("Estimated Population");
-}
-
-/* ──────────────────────────────────────
-   CHART 2 — BAR CHART (Road Mortality)
-────────────────────────────────────── */
-function drawBarChart() {
-  d3.select("#vizContainer").selectAll("*").remove();
-  const { m, w, h } = getDims();
-  const iw = w - m.left - m.right;
-  const ih = h - m.top  - m.bottom;
-
-  const svg = d3.select("#vizContainer").append("svg")
-    .attr("width",w).attr("height",h)
-    .append("g").attr("transform",`translate(${m.left},${m.top})`);
-
-  const x = d3.scaleBand().domain(mortData.map(d=>d.county)).range([0,iw]).padding(0.28);
-  const y = d3.scaleLinear().domain([0,120]).nice().range([ih,0]);
-
-  svg.append("g").attr("class","grid")
-    .call(d3.axisLeft(y).tickSize(-iw).tickFormat(""));
-
-  svg.append("g").attr("class","axis")
-    .attr("transform",`translate(0,${ih})`)
-    .call(d3.axisBottom(x))
-    .selectAll("text")
-    .attr("dy","1em")
-    .style("font-size", iw < 380 ? "8px" : "10px");
-
-  svg.append("g").attr("class","axis").call(d3.axisLeft(y).ticks(5));
-
-  // bars with animated entry
-  svg.selectAll(".bar-rect").data(mortData).enter().append("rect")
-    .attr("class","bar-rect")
-    .attr("x",d=>x(d.county))
-    .attr("width",x.bandwidth())
-    .attr("y",ih).attr("height",0)
-    .attr("rx",3).attr("fill","#c0392b")
-    .on("mouseover",(e,d)=>showTip(`<strong>${d.county} County</strong><br>${d.deaths} confirmed deaths`,e))
-    .on("mousemove",moveTip).on("mouseout",hideTip)
-    .transition().duration(600).delay((_,i)=>i*60)
-    .attr("y",d=>y(d.deaths))
-    .attr("height",d=>ih-y(d.deaths));
-
-  // value labels
-  svg.selectAll(".bar-label").data(mortData).enter().append("text")
-    .attr("class","bar-label")
-    .attr("x",d=>x(d.county)+x.bandwidth()/2)
-    .attr("y",d=>y(d.deaths)-5)
-    .attr("text-anchor","middle")
-    .style("font-size","10px").style("fill","#333")
-    .style("font-family","Arial,sans-serif")
-    .text(d=>d.deaths);
-
-  svg.append("text").attr("x",iw/2).attr("y",ih+38)
-    .attr("text-anchor","middle").style("font-size","10px").style("fill","#888")
-    .style("font-family","Arial,sans-serif").text("County");
-  svg.append("text").attr("transform","rotate(-90)")
-    .attr("x",-ih/2).attr("y",-38)
-    .attr("text-anchor","middle").style("font-size","10px").style("fill","#888")
-    .style("font-family","Arial,sans-serif").text("Confirmed Road Deaths");
-}
-
-/* ──────────────────────────────────────
-   CHART SWITCHER
-────────────────────────────────────── */
-const chartMeta = {
-  line: {
-    label:    "Chart 1 — Population",
-    title:    "Florida Panther Population, 1970–2023",
-    sub:      "Source: FWC & U.S. Fish & Wildlife Service",
-    draw:     drawLineChart
-  },
-  bar: {
-    label:    "Chart 2 — Road Mortality",
-    title:    "Confirmed Road Deaths by County, 2000–2023",
-    sub:      "Source: FWC Road Mortality Reports",
-    draw:     drawBarChart
+  /* ── TOOLTIP ── */
+  const tip = d3.select("#tooltip");
+  function showTip(html, e) {
+    tip.html(html).style("opacity", 1)
+       .style("left", (e.clientX + 16) + "px")
+       .style("top",  (e.clientY - 32) + "px");
   }
-};
+  function moveTip(e) {
+    tip.style("left", (e.clientX + 16) + "px")
+       .style("top",  (e.clientY - 32) + "px");
+  }
+  function hideTip() { tip.style("opacity", 0); }
 
-function switchChart(type) {
-  const meta = chartMeta[type];
-  document.getElementById("chartLabel").textContent    = meta.label;
-  document.getElementById("chartTitleText").textContent = meta.title;
-  document.getElementById("chartSub").textContent       = meta.sub;
-  meta.draw();
-}
+  /* ── RESPONSIVE DIMS ── */
+  function getDims() {
+    const box = document.getElementById("vizContainer");
+    const w   = box.clientWidth || 460;
+    return {
+      m: { top:28, right:24, bottom:44, left:50 },
+      w: w,
+      h: Math.min(280, Math.max(200, w * 0.55))
+    };
+  }
 
-/* ──────────────────────────────────────
-   SCROLLAMA SETUP
-────────────────────────────────────── */
-drawLineChart(); // initial render
+  /* ── CHART 1: LINE CHART ── */
+  function drawLineChart() {
+    d3.select("#vizContainer").selectAll("*").remove();
+    const { m, w, h } = getDims();
+    const iw = w - m.left - m.right;
+    const ih = h - m.top  - m.bottom;
 
-const scroller = scrollama();
+    const svg = d3.select("#vizContainer").append("svg")
+      .attr("width", w).attr("height", h)
+      .append("g").attr("transform", `translate(${m.left},${m.top})`);
 
-scroller
-  .setup({
-    step:   ".step",
-    offset: 0.5,
-    debug:  false
-  })
-  .onStepEnter(({ element, index, direction }) => {
-    // Highlight active step card
-    document.querySelectorAll(".step").forEach(s => s.classList.remove("is-active"));
-    element.classList.add("is-active");
+    const x = d3.scaleLinear().domain([1970, 2023]).range([0, iw]);
+    const y = d3.scaleLinear().domain([0, 260]).nice().range([ih, 0]);
 
-    // Steps 0–2 → line chart | Steps 3–4 → bar chart
-    if (index <= 2) {
-      switchChart("line");
-    } else {
-      switchChart("bar");
+    svg.append("g").attr("class","grid")
+      .call(d3.axisLeft(y).tickSize(-iw).tickFormat(""));
+
+    svg.append("g").attr("class","axis")
+      .attr("transform", `translate(0,${ih})`)
+      .call(d3.axisBottom(x).tickFormat(d3.format("d")).ticks(6));
+
+    svg.append("g").attr("class","axis")
+      .call(d3.axisLeft(y).ticks(5));
+
+    svg.append("path").datum(popData)
+      .attr("class","area-fill")
+      .attr("d", d3.area()
+        .x(d => x(d.year)).y0(ih).y1(d => y(d.pop))
+        .curve(d3.curveMonotoneX));
+
+    svg.append("path").datum(popData)
+      .attr("class","panther-line")
+      .attr("d", d3.line()
+        .x(d => x(d.year)).y(d => y(d.pop))
+        .curve(d3.curveMonotoneX));
+
+    svg.selectAll(".dot").data(popData).enter().append("circle")
+      .attr("class","dot").attr("r", 4)
+      .attr("cx", d => x(d.year))
+      .attr("cy", d => y(d.pop))
+      .on("mouseover", (e, d) => showTip(`<strong>${d.year}</strong><br>~${d.pop} panthers`, e))
+      .on("mousemove", moveTip)
+      .on("mouseout",  hideTip);
+
+    /* 1995 annotation */
+    const rx = x(1995), ry = y(40);
+    svg.append("line")
+      .attr("x1",rx).attr("x2",rx)
+      .attr("y1",ry-6).attr("y2",ry-28)
+      .attr("stroke","#e67e22").attr("stroke-width",1.5)
+      .attr("stroke-dasharray","3,2");
+    svg.append("text")
+      .attr("x", rx + 4).attr("y", ry - 30)
+      .style("font-size","9px").style("fill","#e67e22")
+      .style("font-family","Arial,sans-serif")
+      .text("1995: Genetic rescue");
+
+    svg.append("text").attr("x", iw/2).attr("y", ih + 38)
+      .attr("text-anchor","middle")
+      .style("font-size","10px").style("fill","#888")
+      .style("font-family","Arial,sans-serif").text("Year");
+
+    svg.append("text").attr("transform","rotate(-90)")
+      .attr("x", -ih/2).attr("y", -38)
+      .attr("text-anchor","middle")
+      .style("font-size","10px").style("fill","#888")
+      .style("font-family","Arial,sans-serif").text("Estimated Population");
+  }
+
+  /* ── CHART 2: BAR CHART ── */
+  function drawBarChart() {
+    d3.select("#vizContainer").selectAll("*").remove();
+    const { m, w, h } = getDims();
+    const iw = w - m.left - m.right;
+    const ih = h - m.top  - m.bottom;
+
+    const svg = d3.select("#vizContainer").append("svg")
+      .attr("width", w).attr("height", h)
+      .append("g").attr("transform", `translate(${m.left},${m.top})`);
+
+    const x = d3.scaleBand()
+      .domain(mortData.map(d => d.county))
+      .range([0, iw]).padding(0.28);
+
+    const y = d3.scaleLinear()
+      .domain([0, 120]).nice().range([ih, 0]);
+
+    svg.append("g").attr("class","grid")
+      .call(d3.axisLeft(y).tickSize(-iw).tickFormat(""));
+
+    svg.append("g").attr("class","axis")
+      .attr("transform", `translate(0,${ih})`)
+      .call(d3.axisBottom(x))
+      .selectAll("text")
+      .style("font-size", iw < 380 ? "8px" : "10px");
+
+    svg.append("g").attr("class","axis")
+      .call(d3.axisLeft(y).ticks(5));
+
+    svg.selectAll(".bar-rect").data(mortData).enter().append("rect")
+      .attr("class","bar-rect")
+      .attr("x", d => x(d.county))
+      .attr("width", x.bandwidth())
+      .attr("y", ih).attr("height", 0)
+      .attr("rx", 3).attr("fill","#c0392b")
+      .on("mouseover", (e,d) => showTip(`<strong>${d.county} County</strong><br>${d.deaths} confirmed deaths`, e))
+      .on("mousemove", moveTip)
+      .on("mouseout",  hideTip)
+      .transition().duration(600).delay((_,i) => i * 60)
+      .attr("y", d => y(d.deaths))
+      .attr("height", d => ih - y(d.deaths));
+
+    svg.selectAll(".bar-label").data(mortData).enter().append("text")
+      .attr("x", d => x(d.county) + x.bandwidth() / 2)
+      .attr("y", d => y(d.deaths) - 5)
+      .attr("text-anchor","middle")
+      .style("font-size","10px").style("fill","#333")
+      .style("font-family","Arial,sans-serif")
+      .text(d => d.deaths);
+
+    svg.append("text").attr("x", iw/2).attr("y", ih + 38)
+      .attr("text-anchor","middle")
+      .style("font-size","10px").style("fill","#888")
+      .style("font-family","Arial,sans-serif").text("County");
+
+    svg.append("text").attr("transform","rotate(-90)")
+      .attr("x", -ih/2).attr("y", -38)
+      .attr("text-anchor","middle")
+      .style("font-size","10px").style("fill","#888")
+      .style("font-family","Arial,sans-serif").text("Confirmed Road Deaths");
+  }
+
+  /* ── CHART META SWITCHER ── */
+  const chartMeta = {
+    line: {
+      label: "Chart 1 — Population",
+      title: "Florida Panther Population, 1970–2023",
+      sub:   "Source: FWC & U.S. Fish & Wildlife Service",
+      draw:  drawLineChart
+    },
+    bar: {
+      label: "Chart 2 — Road Mortality",
+      title: "Confirmed Road Deaths by County, 2000–2023",
+      sub:   "Source: FWC Road Mortality Reports",
+      draw:  drawBarChart
     }
+  };
+
+  let currentChart = "line";
+
+  function switchChart(type) {
+    if (currentChart === type) return;
+    currentChart = type;
+    const meta = chartMeta[type];
+    document.getElementById("chartLabel").textContent     = meta.label;
+    document.getElementById("chartTitleText").textContent = meta.title;
+    document.getElementById("chartSub").textContent       = meta.sub;
+    meta.draw();
+  }
+
+  /* ── INITIAL RENDER ── */
+  drawLineChart();
+
+  /* ── SCROLLAMA ── */
+  const scroller = scrollama();
+
+  scroller
+    .setup({
+      step:   ".step",
+      offset: 0.5,
+      debug:  false
+    })
+    .onStepEnter(({ element, index }) => {
+      document.querySelectorAll(".step")
+        .forEach(s => s.classList.remove("is-active"));
+      element.classList.add("is-active");
+      switchChart(index <= 2 ? "line" : "bar");
+    });
+
+  /* ── RESIZE ── */
+  window.addEventListener("resize", () => {
+    scroller.resize();
+    chartMeta[currentChart].draw();
   });
-
-/* ──────────────────────────────────────
-   RESPONSIVE RESIZE
-────────────────────────────────────── */
-let currentChart = "line";
-
-scroller.onStepEnter(({ index }) => {
-  currentChart = index <= 2 ? "line" : "bar";
-});
-
-window.addEventListener("resize", () => {
-  scroller.resize();
-  if (currentChart === "bar") drawBarChart();
-  else drawLineChart();
-});
 </script>
 
 </body>
