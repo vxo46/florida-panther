@@ -164,6 +164,11 @@ body {
   display: block;
 }
 
+.mid-image.tall img {
+  max-height: 720px;
+  object-position: center center;
+}
+
 .mid-image figcaption {
   font-family: Arial, sans-serif;
   font-size: 0.75rem;
