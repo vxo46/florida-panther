@@ -184,7 +184,7 @@ body {
   right: 16px;
   font-family: Arial, sans-serif;
   font-size: 0.65rem;
-  color: rgba(0,0,0,0.45);
+  color: rgba(0,0,0,0.5);
   font-style: italic;
   z-index: 2;
 }
@@ -196,22 +196,8 @@ body {
   gap: 0;
   background-image: url('Brink_extinction.jpg');
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-#scroll::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(250, 249, 246, 0.82);
-  z-index: 0;
-}
-
-#scroll .scroll__graphic,
-#scroll .scroll__text {
-  position: relative;
-  z-index: 1;
+  background-position: center top;
+  background-attachment: scroll;
 }
 
 .scroll__graphic {
