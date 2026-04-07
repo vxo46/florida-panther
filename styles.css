@@ -178,11 +178,40 @@ body {
   margin-top: 10px;
 }
 
-/* SCROLLYTELLING */
+.scroll__photo-credit {
+  position: absolute;
+  bottom: 10px;
+  right: 16px;
+  font-family: Arial, sans-serif;
+  font-size: 0.65rem;
+  color: rgba(0,0,0,0.45);
+  font-style: italic;
+  z-index: 2;
+}
+
+/* SCROLL BACKGROUND */
 #scroll {
   position: relative;
   display: flex;
   gap: 0;
+  background-image: url('Brink_extinction.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#scroll::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(250, 249, 246, 0.82);
+  z-index: 0;
+}
+
+#scroll .scroll__graphic,
+#scroll .scroll__text {
+  position: relative;
+  z-index: 1;
 }
 
 .scroll__graphic {
@@ -193,14 +222,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg);
+  background: transparent;
 }
 
 .chart-box {
   width: 100%;
   max-width: 560px;
   padding: 20px 16px 10px;
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid #dde8e2;
   border-radius: 10px;
   box-shadow: 0 2px 18px rgba(0,0,0,0.06);
@@ -248,7 +277,7 @@ body {
 .step:last-child  { margin-bottom: 20vh; }
 
 .step__inner {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.92);
   border-left: 4px solid var(--green-light);
   border-radius: 0 8px 8px 0;
   padding: 24px 28px;
