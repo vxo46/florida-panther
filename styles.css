@@ -359,7 +359,7 @@ footer a { color: var(--green-light); }
 }
 
 .breed-card {
-  max-width: var(--col-width);
+  max-width: 900px;
   margin: 0 auto 100px;
   padding: 28px 28px 22px;
   background: var(--white);
@@ -371,7 +371,7 @@ footer a { color: var(--green-light); }
 .breed-icons {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 2px;
   margin: 24px 0 20px;
   justify-content: flex-start;
 }
@@ -392,7 +392,7 @@ footer a { color: var(--green-light); }
 }
 
 .breed-icon__img {
-  width: 120px;
+  width: 150px;
   height: auto;
   filter: grayscale(1) opacity(0.3);
   transition: filter 0.4s ease;
