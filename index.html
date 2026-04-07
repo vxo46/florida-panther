@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mapping the Survival of the Florida Panther</title>
- 
+
   <!-- D3 v7 -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <!-- Scrollama -->
   <script src="https://unpkg.com/scrollama"></script>
- 
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
- 
+
 <!-- ══════════════════════════════════════
      HERO
 ══════════════════════════════════════ -->
@@ -32,34 +32,34 @@
   </div>
   <p class="hero__caption">Photo: National Geographic</p>
 </header>
- 
+
 <!-- ══════════════════════════════════════
      INTRO PROSE
 ══════════════════════════════════════ -->
 <div class="site-wrapper">
   <section class="prose">
     <p class="byline">By Vivian D. Orellana &nbsp;·&nbsp; University of Miami &nbsp;·&nbsp; March 2026</p>
- 
+
     <p>
       The Florida panther is one of the most endangered mammals in the United States.
       Once roaming freely across the entire Southeast, it is now confined mostly to a
       narrow corridor of South Florida — squeezed between expanding cities, highways,
       and agricultural land.
     </p>
- 
+
     <p>
       Conservation efforts have produced a remarkable turnaround: from fewer than
       <strong>20 individuals</strong> in the 1970s, the population has grown to an
       estimated <strong>120–230 panthers</strong> today. Yet the species remains
       critically endangered.
     </p>
- 
+
     <div class="pullquote">
       <p>"Florida is one of the fastest-growing states in the country.
          As cities expand, panther habitat becomes more fragmented —
          and the consequences are measurable."</p>
     </div>
- 
+
     <p>
       Vehicle collisions and habitat loss continue to threaten its survival.
       This story explores the relationship between panther population trends,
@@ -68,7 +68,7 @@
     </p>
   </section>
 </div>
- 
+
 <!-- ══════════════════════════════════════
      MID ARTICLE IMAGE
 ══════════════════════════════════════ -->
@@ -85,13 +85,13 @@
     </figcaption>
   </figure>
 </div>
- 
+
 <!-- ══════════════════════════════════════
      SCROLLYTELLING — CHARTS 1 & 2
 ══════════════════════════════════════ -->
 <div class="site-wrapper">
   <section id="scroll">
- 
+
     <!-- LEFT: Sticky Chart -->
     <div class="scroll__graphic">
       <div class="chart-box">
@@ -101,10 +101,10 @@
         <div id="vizContainer"></div>
       </div>
     </div>
- 
+
     <!-- RIGHT: Scrolling Steps -->
     <div class="scroll__text">
- 
+
       <div class="step" data-step="0">
         <div class="step__inner">
           <p class="step__num">Step 01 — Recovery</p>
@@ -115,7 +115,7 @@
           and how slow the initial recovery was.</p>
         </div>
       </div>
- 
+
       <div class="step" data-step="1">
         <div class="step__inner">
           <p class="step__num">Step 02 — Turning Point</p>
@@ -126,7 +126,7 @@
           curve begin its steeper climb after 1995.</p>
         </div>
       </div>
- 
+
       <div class="step" data-step="2">
         <div class="step__inner">
           <p class="step__num">Step 03 — Today</p>
@@ -136,7 +136,7 @@
           but only if sufficient connected habitat remains available.</p>
         </div>
       </div>
- 
+
       <div class="step" data-step="3">
         <div class="step__inner">
           <p class="step__num">Step 04 — Road Mortality</p>
@@ -146,7 +146,7 @@
           100 confirmed deaths since 2000 — nearly double any other county.</p>
         </div>
       </div>
- 
+
       <div class="step" data-step="4">
         <div class="step__inner">
           <p class="step__num">Step 05 — Hotspots</p>
@@ -157,11 +157,11 @@
           have helped — but hundreds of miles of road remain unmitigated.</p>
         </div>
       </div>
- 
+
     </div>
   </section>
 </div>
- 
+
 <!-- ══════════════════════════════════════
      SECTION DIVIDER
 ══════════════════════════════════════ -->
@@ -170,14 +170,14 @@
     <span class="section-divider__label">Reproduction &amp; Recovery</span>
   </div>
 </div>
- 
+
 <!-- ══════════════════════════════════════
      SECTION 3 — BREEDING NARRATIVE
 ══════════════════════════════════════ -->
 <div class="site-wrapper">
   <section class="prose breeding-prose">
     <h2>Born Into a Fragile World</h2>
- 
+
     <p>
       Florida panther females typically produce litters of one to four kittens —
       averaging between 2.4 and 2.5 per birth — with roughly 70 percent of all
@@ -187,7 +187,7 @@
       two years of age and may raise several litters across a lifetime, provided they
       hold stable territory in an increasingly compressed landscape.
     </p>
- 
+
     <p>
       Since the 1995 genetic restoration — when eight Texas cougars were introduced
       to counteract the effects of inbreeding — annual population growth has averaged
@@ -200,7 +200,7 @@
     </p>
   </section>
 </div>
- 
+
 <!-- ══════════════════════════════════════
      SECTION 3 — PICTORIAL UNIT CHART
 ══════════════════════════════════════ -->
@@ -209,11 +209,11 @@
     <p class="chart-label">Chart 3 — Reproduction</p>
     <p class="chart-title-text">Litter Composition: 70% Contain 2–3 Kittens</p>
     <p class="chart-sub">Based on FWC telemetry records · Each icon represents one litter in ten</p>
- 
+
     <div class="breed-icons" id="breedIcons" aria-label="Pictorial chart: 7 of 10 litters contain two or three kittens">
       <!-- Icons injected by JavaScript -->
     </div>
- 
+
     <div class="breed-legend">
       <span class="breed-legend__item breed-legend__item--highlight">
         <svg width="12" height="12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -228,14 +228,14 @@
         30% — 1 or 4 kittens per litter
       </span>
     </div>
- 
+
     <p class="breed-note">
       Births peak March–June &nbsp;·&nbsp; Females mature ~age 2 &nbsp;·&nbsp;
       Population growth ~3–4% annually since 1995 genetic rescue
     </p>
   </div>
 </div>
- 
+
 <!-- ══════════════════════════════════════
      CLOSING PROSE
 ══════════════════════════════════════ -->
@@ -264,7 +264,7 @@
     </p>
   </section>
 </div>
- 
+
 <!-- FOOTER -->
 <footer>
   <p>Data Story by Vivian D. Orellana · University of Miami · 2026</p>
@@ -274,14 +274,14 @@
     <a href="https://www.fws.gov" target="_blank">U.S. Fish &amp; Wildlife Service</a>
   </p>
 </footer>
- 
+
 <!-- TOOLTIP -->
 <div class="tooltip" id="tooltip"></div>
- 
+
 <!-- ══════════════════════════════════════
      JAVASCRIPT
 ══════════════════════════════════════ -->
 <script src="script.js"></script>
- 
+
 </body>
 </html>
