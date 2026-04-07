@@ -194,10 +194,6 @@ body {
   position: relative;
   display: flex;
   gap: 0;
-  background-image: url('Brink_extinction.jpg');
-  background-size: cover;
-  background-position: center top;
-  background-attachment: scroll;
 }
 
 .scroll__graphic {
@@ -211,11 +207,19 @@ body {
   background: transparent;
 }
 
+.scroll-bg {
+  background-image: url('Brink_extinction.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: var(--bg);
+}
+
 .chart-box {
   width: 100%;
   max-width: 560px;
   padding: 20px 16px 10px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255,255,255,0.88);
   border: 1px solid #dde8e2;
   border-radius: 10px;
   box-shadow: 0 2px 18px rgba(0,0,0,0.06);
@@ -263,7 +267,7 @@ body {
 .step:last-child  { margin-bottom: 20vh; }
 
 .step__inner {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255,255,255,0.88);
   border-left: 4px solid var(--green-light);
   border-radius: 0 8px 8px 0;
   padding: 24px 28px;
