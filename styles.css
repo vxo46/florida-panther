@@ -191,17 +191,20 @@ body {
   position: relative;
   display: flex;
   gap: 0;
+  overflow: hidden;
 }
 
 .scroll__bg-img {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   z-index: 0;
-  opacity: 0.35;
+  opacity: 0.25;
+  pointer-events: none;
 }
 
 .scroll__graphic {
@@ -259,11 +262,6 @@ body {
   color: #666;
   font-style: italic;
   margin-bottom: 14px;
-}
-
-.scroll__text {
-  flex: 0 0 45%;
-  padding: 0 0 0 40px;
 }
 
 .step {
