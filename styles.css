@@ -145,6 +145,14 @@ body {
   margin: 0;
 }
 
+.pullquote__cite {
+  font-size: 0.78rem !important;
+  font-style: normal !important;
+  color: var(--green-mid) !important;
+  margin-top: 12px !important;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
 /* MID IMAGE */
 .mid-image {
   width: 100%;
