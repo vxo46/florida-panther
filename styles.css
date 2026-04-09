@@ -324,6 +324,46 @@ footer {
 
 footer a { color: var(--green-light); }
 
+/* NEWS BRIEF */
+.news-brief {
+  padding-top: 0;
+  padding-bottom: 40px;
+}
+
+.news-alert {
+  background: #f0f7f3;
+  border-radius: 10px;
+  padding: 28px 32px;
+  margin-top: 10px;
+}
+
+.news-alert__label {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--green-mid);
+  margin-bottom: 16px;
+}
+
+.news-alert p {
+  font-size: 0.97rem;
+  color: #2c2c2c;
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+
+.news-alert__sources {
+  font-family: Arial, sans-serif;
+  font-size: 0.78rem !important;
+  color: #777 !important;
+  margin-top: 8px;
+  margin-bottom: 0 !important;
+  border-top: 1px solid #ccddd5;
+  padding-top: 14px;
+}
+
 /* SECTION 3 — BREEDING */
 .section-divider {
   display: flex;
