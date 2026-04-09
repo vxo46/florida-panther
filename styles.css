@@ -354,16 +354,6 @@ footer a { color: var(--green-light); }
   margin-bottom: 16px;
 }
 
-.news-alert__sources {
-  font-family: Arial, sans-serif;
-  font-size: 0.78rem !important;
-  color: #777 !important;
-  margin-top: 8px;
-  margin-bottom: 0 !important;
-  border-top: 1px solid #ccddd5;
-  padding-top: 14px;
-}
-
 /* SECTION 3 — BREEDING */
 .section-divider {
   display: flex;
