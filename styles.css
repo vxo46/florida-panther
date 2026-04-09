@@ -331,27 +331,28 @@ footer a { color: var(--green-light); }
 }
 
 .news-alert {
-  background: #f0f7f3;
-  border-radius: 10px;
-  padding: 28px 32px;
-  margin-top: 10px;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  margin-top: 0;
 }
 
 .news-alert__label {
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--green-mid);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .news-alert p {
-  font-size: 0.97rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 18px;
   color: #2c2c2c;
   line-height: 1.85;
-  margin-bottom: 16px;
+  margin-bottom: 22px;
 }
 
 /* SECTION 3 — BREEDING */
