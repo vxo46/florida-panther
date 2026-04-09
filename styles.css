@@ -79,7 +79,7 @@ body {
 .hero__deck {
   font-size: clamp(0.95rem, 2vw, 1.2rem);
   color: #ddd;
-  font-style: italic;
+  font-style: normal;
   max-width: 660px;
   margin: 0 auto;
 }
@@ -140,7 +140,7 @@ body {
 
 .pullquote p {
   font-size: clamp(1.05rem, 2.2vw, 1.28rem);
-  font-style: italic;
+  font-style: normal;
   color: var(--green-dark);
   margin: 0;
 }
@@ -178,7 +178,7 @@ body {
   font-family: Arial, sans-serif;
   font-size: 0.75rem;
   color: #999;
-  font-style: italic;
+  font-style: normal;
   text-align: center;
   margin-top: 10px;
 }
@@ -247,7 +247,7 @@ body {
   font-family: Arial, sans-serif;
   font-size: 0.85rem;
   color: #666;
-  font-style: italic;
+  font-style: normal;
   margin-bottom: 14px;
 }
 
@@ -474,7 +474,7 @@ footer a { color: var(--green-light); }
   font-family: Arial, sans-serif;
   font-size: 0.82rem;
   color: #666;
-  font-style: italic;
+  font-style: normal;
   border-top: 1px solid #edf3ef;
   padding-top: 12px;
   margin-top: 4px;
